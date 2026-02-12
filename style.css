@@ -20,6 +20,42 @@ body {
   perspective: 1000px;
 }
 
+/* FLOATING PHOTO */
+.floating-photo {
+  position: fixed;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 998;
+  opacity: 0;
+  animation: photoFloat 4s ease-in-out infinite;
+}
+
+.floating-photo img {
+  width: 160px;
+  max-width: 70vw;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(255, 105, 180, 0.4);
+}
+
+/* Show photo when greeting appears */
+body.reveal-text .floating-photo {
+  opacity: 1;
+}
+
+/* Floating motion */
+@keyframes photoFloat {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
+}
+
+
 /* GREETING */
 .valentine-text {
   position: fixed;
@@ -1067,4 +1103,5 @@ body.reveal-text .valentine-text {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
 
