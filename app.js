@@ -1,11 +1,19 @@
-onload = () => {
-  // start flower animation
-  setTimeout(() => {
-    document.body.classList.remove("not-loaded");
-  }, 1000);
+const tapBtn = document.getElementById("tapBtn");
+const music = document.getElementById("bg-music");
 
-  // reveal Valentine text LAST
+tapBtn.addEventListener("click", () => {
+  // Hide the button
+  tapBtn.style.display = "none";
+
+  // Start flower animation
+  document.body.classList.remove("not-loaded");
+
+  // Play music
+  music.volume = 0.85;
+  music.play();
+
+  // Reveal greeting LAST
   setTimeout(() => {
     document.body.classList.add("reveal-text");
-  }, 6000); // adjust timing if you want
-};
+  }, 6000);
+});
