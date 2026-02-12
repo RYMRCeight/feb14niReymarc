@@ -85,6 +85,35 @@ body.reveal-text .valentine-text {
   }
 }
 
+/* VOLUME NOTICE */
+#volumeNotice {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+  padding: 14px 26px;
+  font-size: 1.1rem;
+  font-family: "Georgia", serif;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  z-index: 1001;
+  opacity: 0;
+  animation: volumeFlash 2s ease-in-out infinite;
+}
+
+/* Flash animation */
+@keyframes volumeFlash {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Hide tap button initially */
+#tapBtn {
+  display: none;
+}
+
 /* TAP BUTTON */
 #tapBtn {
   position: fixed;
@@ -1103,5 +1132,6 @@ body.reveal-text .valentine-text {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
 
 
